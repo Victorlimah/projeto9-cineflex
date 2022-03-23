@@ -8,7 +8,6 @@ body {
   font-family: "Roboto";
 }
 
-/* header */
 header {
   width: 100%;
   background-color: #c3cfd9;
@@ -39,9 +38,7 @@ header {
 .movie img {
   width: 129px;
   height: 193px;
-  margin-left: 15px;
-  margin-bottom: 20px;
-  background-color: aqua;
+  margin: 0 0 20px 10px;
 }
 
 .day h3 {
@@ -76,4 +73,25 @@ article {
   align-items: center;
   text-align: center;
   color: #ffffff;
+}
+
+form {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-size: 18px;
+  color: #293845;
+  margin-top: 10px;
+}
+
+form input {
+  border: 1px solid #d5d5d5;
+  font-size: 17px;
+  margin: 10px 0;
+  padding: 15px;
+  color: #afafaf;
 }

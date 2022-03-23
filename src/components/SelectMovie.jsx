@@ -20,7 +20,7 @@ export default function SelectMovie() {
 
   return (
     <>
-      <SectionTitle nameClass="container-select" text="Selecione um filme" />
+      <SectionTitle text="Selecione um filme" />
       <section className="list-movies">
         {movies.map((movie, index) => {
           return (

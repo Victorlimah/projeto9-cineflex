@@ -1,6 +1,6 @@
-export default function SectionTitle({ nameClass, text }) {
+export default function SectionTitle({ name, text }) {
   return (
-    <section className={nameClass}>
+    <section className={`container-select ${name}`}>
       <h3>{text}</h3>
     </section>
   );

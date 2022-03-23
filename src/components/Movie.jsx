@@ -21,7 +21,7 @@ export default function Movie() {
 
   return (
     <>
-      <SectionTitle nameClass="container-select" text="Selecione o horário" />
+      <SectionTitle text="Selecione o horário" />
       <section className="list-time">
         {days.map((day) => {
           return (
