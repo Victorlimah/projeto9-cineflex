@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto";
+}
+
+/* header */
+header {
+  width: 100%;
+  background-color: #c3cfd9;
+  padding: 20px;
+  text-align: center;
+  font-size: 34px;
+  line-height: 40px;
+  text-align: center;
+  color: #e8833a;
+  position: fixed;
+  top: 0;
+}
+
+.container-select {
+  font-size: 24px;
+  color: #293845;
+  margin: 90px 0 15px 0;
+  background-color: red;
+  padding: 35px;
+  text-align: center;
+}
+
+.list-movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: blue;
+}
+
+.movie img {
+  width: 129px;
+  height: 193px;
+  margin-left: 15px;
+  margin-bottom: 20px;
+  background-color: aqua;
+}
+
+.day h3 {
+  font-size: 23px;
+  display: flex;
+  align-items: center;
+  color: #293845;
+}
+
+.list-time {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: yellow;
+}
+
+.list-hour {
+  display: flex;
+  margin-top: 20px;
+}
+
+.list-hour li {
+  padding: 10px;
+  background: #e8833a;
+  border-radius: 8px;
+  margin-right: 10px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
