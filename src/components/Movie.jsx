@@ -1,15 +1,15 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import SectionTitle from "./SectionTitle";
 import { API_LINK } from "./App";
 
 export default function Movie() {
   const [days, setDays] = useState(null);
-  const parada = `${API_LINK}/movies/${useParams().idMovie}/showtimes`;
-  console.log(parada);
+  const { idMovie } = useParams();
+
   useEffect(() => {
-    const request = axios.get(parada);
+    const request = axios.get(`${API_LINK}/movies/${idMovie}/showtimes`);
     request.then((response) => {
       setDays(response.data.days);
     });
@@ -18,7 +18,7 @@ export default function Movie() {
   if (days === null) {
     return <div>Carregando...</div>;
   }
-  console.log(days);
+
   return (
     <>
       <SectionTitle nameClass="container-select" text="Selecione o horário" />
@@ -31,7 +31,11 @@ export default function Movie() {
               </h3>
               <ul className="list-hour">
                 {day.showtimes.map((hour) => {
-                  return <li>{hour.name}</li>;
+                  return (
+                    <Link to={`/session/${hour.id}`}>
+                      <li>{hour.name}</li>
+                    </Link>
+                  );
                 })}
               </ul>
             </article>
