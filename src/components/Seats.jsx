@@ -11,14 +11,30 @@ export default function Seats() {
   useEffect(() => {
     const request = axios.get(`${API_LINK}/showtimes/${idSession}/seats/`);
     request.then((response) => {
-      setSeats(response.data);
+      setSeats(response.data.seats);
     });
-  }, [idSession]);
+  }, []);
 
   console.log(seats);
+
+  if (seats === null) {
+    return <div>Carregando...</div>;
+  }
+
   return (
     <>
       <SectionTitle text="Selecione o(s) assento(s)" />
+
+      <section className="seats">
+        {seats.map((seat) => {
+          return (
+            <article className="seat">
+              {seat.name.length === 1 ? `0${seat.name}` : seat.name}
+            </article>
+          );
+        })}
+      </section>
+
       <form>
         <label for="nameBuyer">Nome do comprador:</label>
         <input type="text" name="nameBuyer" placeholder="Digite seu nome..." />
