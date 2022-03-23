@@ -11,7 +11,7 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<SelectMovie />} />
-        <Route path="/filme" element={<Movie />} />
+        <Route path="/movies/:idMovie" element={<Movie />}></Route>
       </Routes>
     </BrowserRouter>
   );

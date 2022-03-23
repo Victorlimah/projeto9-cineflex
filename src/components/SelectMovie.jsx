@@ -18,16 +18,14 @@ export default function SelectMovie() {
     return <div>Carregando...</div>;
   }
 
-  console.log(movies);
-
   return (
     <>
       <SectionTitle nameClass="container-select" text="Selecione um filme" />
       <section className="list-movies">
-        {movies.map((movie) => {
+        {movies.map((movie, index) => {
           return (
             <article className="movie">
-              <Link to={`/filme`}>
+              <Link to={`/movies/${index + 1}`}>
                 <img src={movie.posterURL} alt="Movie Poster" />
               </Link>
             </article>
