@@ -13,10 +13,13 @@ export default function SelectMovie() {
       setMovies(response.data);
     });
   }, []);
-  console.log(movies);
+
   if (movies === null) {
     return <div>Carregando...</div>;
   }
+
+  console.log(movies);
+
   return (
     <>
       <SectionTitle nameClass="container-select" text="Selecione um filme" />

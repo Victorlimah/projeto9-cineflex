@@ -26,7 +26,6 @@ header {
   font-size: 24px;
   color: #293845;
   margin: 90px 0 15px 0;
-  background-color: red;
   padding: 35px;
   text-align: center;
 }
@@ -35,7 +34,6 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: blue;
 }
 
 .movie img {
@@ -47,7 +45,7 @@ header {
 }
 
 .day h3 {
-  font-size: 23px;
+  font-size: 20px;
   display: flex;
   align-items: center;
   color: #293845;
@@ -55,9 +53,12 @@ header {
 
 .list-time {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  background-color: yellow;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+article {
+  margin-bottom: 20px;
 }
 
 .list-hour {
