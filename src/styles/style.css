@@ -41,6 +41,38 @@ header {
   margin: 0 0 20px 10px;
 }
 
+.footer-movie {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  bottom: 0;
+  width: 100%;
+  background-color: #dfe6ed;
+  height: 100px;
+}
+
+.margin {
+  width: 100vw;
+  height: 10px;
+  margin-top: 100px;
+}
+
+.footer-movie img {
+  width: 48px;
+  height: 72px;
+  margin-left: 25px;
+}
+
+.footer-movie div {
+  margin-left: 25px;
+}
+
+.footer-movie h2 {
+  font-size: 24px;
+  line-height: 30px;
+  color: #293845;
+}
+
 .day h3 {
   font-size: 20px;
   display: flex;

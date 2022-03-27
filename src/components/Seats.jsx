@@ -18,8 +18,6 @@ export default function Seats() {
     });
   }, []);
 
-  console.log(seats);
-
   if (seats === null) {
     return <div>Carregando...</div>;
   }

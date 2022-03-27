@@ -3,8 +3,10 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import SectionTitle from "./SectionTitle";
 import { API_LINK } from "./App";
+import Footer from "./Footer";
 
 export default function Movie() {
+  const [movie, setMovie] = useState(null);
   const [days, setDays] = useState(null);
   const { idMovie } = useParams();
 
@@ -12,6 +14,7 @@ export default function Movie() {
     const request = axios.get(`${API_LINK}/movies/${idMovie}/showtimes`);
     request.then((response) => {
       setDays(response.data.days);
+      setMovie(response.data);
     });
   }, []);
 
@@ -42,6 +45,12 @@ export default function Movie() {
           );
         })}
       </section>
+      <div className="margin"></div>
+      {movie !== null ? (
+        <Footer posterURL={movie.posterURL} title={movie.title} />
+      ) : (
+        <></>
+      )}
     </>
   );
 }
