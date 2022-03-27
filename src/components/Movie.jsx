@@ -18,7 +18,7 @@ export default function Movie() {
     });
   }, []);
 
-  if (days === null) {
+  if (days === null || movie === null) {
     return <div>Carregando...</div>;
   }
 
@@ -46,11 +46,7 @@ export default function Movie() {
         })}
       </section>
       <div className="margin"></div>
-      {movie !== null ? (
-        <Footer posterURL={movie.posterURL} title={movie.title} />
-      ) : (
-        <></>
-      )}
+      <Footer posterURL={movie.posterURL} title={movie.title} />
     </>
   );
 }

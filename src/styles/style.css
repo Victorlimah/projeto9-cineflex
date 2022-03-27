@@ -128,6 +128,20 @@ form input {
   color: #afafaf;
 }
 
+form button {
+  height: 42px;
+  border: none;
+  background: #e8833a;
+  border-radius: 3px;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
 .seats {
   width: 100%;
   display: flex;

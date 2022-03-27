@@ -3,8 +3,10 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import SectionTitle from "./SectionTitle";
 import { API_LINK } from "./App";
+import Footer from "./Footer";
 
 export default function Seats() {
+  const [movie, setMovie] = useState(null);
   const [seats, setSeats] = useState(null);
   const [selectedSeats, setSelectedSeats] = useState([]);
   const { idSession } = useParams();
@@ -15,13 +17,15 @@ export default function Seats() {
     const request = axios.get(`${API_LINK}/showtimes/${idSession}/seats/`);
     request.then((response) => {
       setSeats(response.data.seats);
+      setMovie(response.data);
     });
   }, []);
 
-  if (seats === null) {
+  if (seats === null || movie === null) {
     return <div>Carregando...</div>;
   }
 
+  console.log(movie);
   return (
     <>
       <SectionTitle text="Selecione o(s) assento(s)" />
@@ -83,7 +87,15 @@ export default function Seats() {
 
         <label for="cpfBuyer">CPF do comprador:</label>
         <input type="number" name="cpfBuyer" placeholder="Digite seu cpf..." />
+
+        <button>Reservar assento(s)</button>
       </form>
+      <div className="margin"></div>
+      <Footer
+        posterURL={movie.movie.posterURL}
+        title={movie.movie.title}
+        hours={`${movie.day.weekday} - ${movie.name}`}
+      />
     </>
   );
 }
