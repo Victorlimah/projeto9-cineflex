@@ -6,6 +6,7 @@ import { API_LINK } from "./App";
 
 export default function Seats() {
   const [seats, setSeats] = useState(null);
+  const [selectedSeats, setSelectedSeats] = useState([]);
   const { idSession } = useParams();
 
   useEffect(() => {
@@ -26,13 +27,44 @@ export default function Seats() {
       <SectionTitle text="Selecione o(s) assento(s)" />
 
       <section className="seats">
-        {seats.map((seat) => {
-          return (
-            <article className="seat">
-              {seat.name.length === 1 ? `0${seat.name}` : seat.name}
-            </article>
-          );
+        {seats.map(({ id, name, isAvailable }) => {
+          if (isAvailable) {
+            return (
+              <article
+                className="available"
+                onClick={() => alert("selecionou")}
+              >
+                {name.length === 1 ? `0${name}` : name}
+              </article>
+            );
+          } else {
+            return (
+              <article
+                className="unavailable"
+                onClick={() => alert("Este lugar não está disponível.")}
+              >
+                {name.length === 1 ? `0${name}` : name}
+              </article>
+            );
+          }
         })}
+      </section>
+
+      <section className="indicator">
+        <div className="indicator-selected">
+          <span className="selected"></span>
+          <span>Selecionado</span>
+        </div>
+
+        <div className="indicator-available">
+          <span className="available"></span>
+          <span>Disponíveis</span>
+        </div>
+
+        <div className="indicator-unavailable">
+          <span className="unavailable"></span>
+          <span>Indisponíveis</span>
+        </div>
       </section>
 
       <form>
