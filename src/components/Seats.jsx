@@ -9,6 +9,8 @@ export default function Seats() {
   const [selectedSeats, setSelectedSeats] = useState([]);
   const { idSession } = useParams();
 
+  console.log("selected: " + selectedSeats);
+
   useEffect(() => {
     const request = axios.get(`${API_LINK}/showtimes/${idSession}/seats/`);
     request.then((response) => {
@@ -31,8 +33,18 @@ export default function Seats() {
           if (isAvailable) {
             return (
               <article
-                className="available"
-                onClick={() => alert("selecionou")}
+                className={
+                  selectedSeats.includes(id)
+                    ? "available selected"
+                    : "available"
+                }
+                onClick={() => {
+                  selectedSeats.includes(id)
+                    ? setSelectedSeats(
+                        selectedSeats.filter((seat) => seat !== id)
+                      )
+                    : setSelectedSeats([...selectedSeats, id]);
+                }}
               >
                 {name.length === 1 ? `0${name}` : name}
               </article>
