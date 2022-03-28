@@ -1,4 +1,4 @@
-import { Navigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import SectionTitle from "./SectionTitle";
@@ -10,22 +10,24 @@ export default function Seats() {
   const [seats, setSeats] = useState(null);
   const [selectedSeats, setSelectedSeats] = useState([]);
   const { idSession } = useParams();
-
-  console.log("selected: " + selectedSeats);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const request = axios.get(`${API_LINK}/showtimes/${idSession}/seats/`);
-    request.then((response) => {
-      setSeats(response.data.seats);
-      setMovie(response.data);
-    });
+    axios
+      .get(`${API_LINK}/showtimes/${idSession}/seats/`)
+      .then((response) => {
+        setSeats(response.data.seats);
+        setMovie(response.data);
+      })
+      .catch(() => {
+        alert("Erro ao carregar os assento(s)");
+      });
   }, []);
 
   if (seats === null || movie === null) {
     return <div>Carregando...</div>;
   }
 
-  console.log(movie);
   return (
     <>
       <SectionTitle text="Selecione o(s) assento(s)" />
@@ -112,18 +114,21 @@ export default function Seats() {
   );
 
   function handleSubmit(event) {
+    event.preventDefault();
+
     const order = {
       ids: selectedSeats,
       name: event.target.nameBuyer.value,
       cpf: event.target.cpfBuyer.value,
     };
 
-    console.log(order);
-    axios.post(`${API_LINK}/seats/book-many/`, order).then(() => {
-      return <Navigate to="/" />;
-    });
-
-    event.preventDefault();
-    console.log(event);
+    axios
+      .post(`${API_LINK}/seats/book-many/`, order)
+      .then(() => {
+        navigate("/success");
+      })
+      .catch(() => {
+        alert("Erro ao reservar assento(s)");
+      });
   }
 }
