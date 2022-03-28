@@ -29,6 +29,14 @@ header {
   text-align: center;
 }
 
+.success {
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #247a6b;
+}
+
 .list-movies {
   display: flex;
   flex-wrap: wrap;
@@ -210,4 +218,46 @@ form button {
   background-color: #f7c52b;
   border-radius: 50px;
   margin: 3px 3px;
+}
+
+.infoSuccess {
+  margin-left: 30px;
+}
+
+.infoSuccess div {
+  margin-top: 20px;
+}
+
+.infoSuccess div h2 {
+  font-weight: 700;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  color: #293845;
+  margin-bottom: 5px;
+}
+
+.infoSuccess div h3 {
+  font-size: 22px;
+  margin-bottom: 2px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  color: #293845;
+}
+
+.infoSuccess button {
+  width: 200px;
+  height: 42px;
+  border: none;
+  background: #e8833a;
+  margin: 35px auto 0 auto;
+  border-radius: 3px;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
 }

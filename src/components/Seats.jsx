@@ -103,7 +103,14 @@ export default function Seats() {
         <button>Reservar assento(s)</button>
       </form>
       <div className="margin"></div>
-
+      {console.log(movie)}
+      {setInfoSuccess(
+        movie.seats,
+        movie.movie.title,
+        movie.day.date,
+        movie.name,
+        selectedSeats
+      )}
       {/* NÃO CONSEGUI FAZER DESTRUCTURING ;-; */}
       <Footer
         posterURL={movie.movie.posterURL}
@@ -125,10 +132,22 @@ export default function Seats() {
     axios
       .post(`${API_LINK}/seats/book-many/`, order)
       .then(() => {
-        navigate("/success");
+        navigate("/success", { state: { order } });
       })
       .catch(() => {
         alert("Erro ao reservar assento(s)");
       });
   }
+}
+
+export let infoSuccess;
+
+function setInfoSuccess(seats, title, date, hour, arraySeats) {
+  infoSuccess = {
+    seats,
+    title,
+    date,
+    hour,
+    arraySeats,
+  };
 }

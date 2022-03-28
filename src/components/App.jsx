@@ -5,6 +5,7 @@ import Movie from "./Movie";
 import "../styles/reset.css";
 import "../styles/style.css";
 import Seats from "./Seats";
+import Success from "./Success";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/" element={<SelectMovie />} />
         <Route path="/movies/:idMovie" element={<Movie />} />
         <Route path="/session/:idSession" element={<Seats />} />
+        <Route path="/success" element={<Success />} />
       </Routes>
     </BrowserRouter>
   );
