@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import SectionTitle from "./SectionTitle";
 import { infoSuccess } from "./Seats";
@@ -15,6 +15,10 @@ export default function Success() {
   console.log("arraySeats" + arraySeats);
 
   let arrayNameSeats = [];
+
+  function formatCPF(cpf) {
+    return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, "$1.$2.$3-$4");
+  }
 
   while (arrayNameSeats.length !== arraySeats.length) {
     let count = 0;
@@ -50,10 +54,12 @@ export default function Success() {
         <div>
           <h2>Comprador</h2>
           <h3>Nome: {name}</h3>
-          <h3>CPF: {cpf}</h3>
+          <h3>CPF: {formatCPF(cpf)}</h3>
         </div>
 
-        <button onClick={navigate("/")}>Voltar pra home</button>
+        <Link to={"/"}>
+          <button>Voltar pra home</button>
+        </Link>
       </section>
     </>
   );
