@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import SectionTitle from "./SectionTitle";
@@ -81,16 +81,28 @@ export default function Seats() {
         </div>
       </section>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <label for="nameBuyer">Nome do comprador:</label>
-        <input type="text" name="nameBuyer" placeholder="Digite seu nome..." />
+        <input
+          required
+          type="text"
+          name="nameBuyer"
+          placeholder="Digite seu nome..."
+        />
 
         <label for="cpfBuyer">CPF do comprador:</label>
-        <input type="number" name="cpfBuyer" placeholder="Digite seu cpf..." />
+        <input
+          required
+          type="number"
+          name="cpfBuyer"
+          placeholder="Digite seu cpf..."
+        />
 
         <button>Reservar assento(s)</button>
       </form>
       <div className="margin"></div>
+
+      {/* NÃO CONSEGUI FAZER DESTRUCTURING ;-; */}
       <Footer
         posterURL={movie.movie.posterURL}
         title={movie.movie.title}
@@ -98,4 +110,20 @@ export default function Seats() {
       />
     </>
   );
+
+  function handleSubmit(event) {
+    const order = {
+      ids: selectedSeats,
+      name: event.target.nameBuyer.value,
+      cpf: event.target.cpfBuyer.value,
+    };
+
+    console.log(order);
+    axios.post(`${API_LINK}/seats/book-many/`, order).then(() => {
+      return <Navigate to="/" />;
+    });
+
+    event.preventDefault();
+    console.log(event);
+  }
 }
