@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+<h1 align="center">
+ CINEFLEX 🎥
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
 
-## Available Scripts
+ <img src="https://i.ibb.co/Pt9L9Hs/montagem.png" alt="Prints do cineflex" />
+</p>
 
-In the project directory, you can run:
 
-### `npm start`
+## 💻 Projeto
+Single-Page Application (SPA) para um cinema, usando React Router com layout mobile! 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## ☁️ Deploy
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Você pode acessar o deploy deste projeto [clicando aqui](https://victorlimah-cineflex.vercel.app/).
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## :hammer_and_wrench: Features 
 
-### `npm run build`
+-   [ ] layout produzido para dispositivos móveis;
+-   [ ] Os elementos da página são todos componentizados com React em arquivos separados;
+-   [ ] Manipulação de tudo o conteúdo através de estados react;
+-   [ ] Ao clicar em algum filme, vai para a rota de sessões;
+-   [ ] Ao clicar em alguma sessão, vai para tela de assentos;
+-   [ ] Podemos selecionar os assentos;
+-   [ ] Quando clicamos em Reservar Assento(s), e houver sucesso, vai para tela de sucesso da compra;
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ✨ Tecnologias
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   [ ] HTML
+-   [ ] CSS
+-   [ ] JavaScript
+-   [ ] API
+-   [ ] React
+-   [ ] React Router
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 🔖 Layout
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/file/rc7ZTYfLZg9zpGahWB1aXb/Cineflex?node-id=0%3A1). É necessário ter conta no [Figma](http://figma.com/) para acessá-lo.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<br />
