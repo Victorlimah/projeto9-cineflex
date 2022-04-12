@@ -9,7 +9,7 @@
 
 
 ## 💻 Projeto
-Single-Page Application (SPA) para um cinema, usando React Router com layout mobile! 
+Single-Page Application (SPA) para um cinema, usando React Router! 
 
 ## ☁️ Deploy
 
